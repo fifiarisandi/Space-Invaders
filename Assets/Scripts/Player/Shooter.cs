@@ -56,13 +56,14 @@ public class Shooter : MonoBehaviour
         // and don't rotate the instance at all - let it keep its "identity" rotation
 
         //Calcute the position of the left and the right projectile
-        Vector3 leftProjectile = new Vector3(gameObject.transform.position.x - projectileRange, gameObject.transform.position.y, 0);
-        Vector3 rightProjectile = new Vector3(gameObject.transform.position.x + projectileRange, gameObject.transform.position.y, 0);
+        Vector3 leftProjectile = new Vector3(gameObject.transform.position.x - projectileRange, gameObject.transform.position.y + 0.45f, 0);
+        Vector3 middleProjectile = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.75f, 0);
+        Vector3 rightProjectile = new Vector3(gameObject.transform.position.x + projectileRange, gameObject.transform.position.y + 0.45f, 0);
 
         if (powerUpCollected)
         {
             Instantiate(projectilePrefab, leftProjectile, Quaternion.identity);
-            Instantiate(projectilePrefab, gameObject.transform.position, Quaternion.identity);
+            Instantiate(projectilePrefab, middleProjectile, Quaternion.identity);
             Instantiate(projectilePrefab, rightProjectile, Quaternion.identity);
             //audio.Play();
         } 
