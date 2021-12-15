@@ -7,6 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public AudioSource audio;
     public AudioClip killAliens;
+    public GameObject winText;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +31,11 @@ public class EnemyBehaviour : MonoBehaviour
         {
             audio.PlayOneShot(killAliens);
             Destroy(gameObject);
+
+            //The score changes when the enemy is killed
             Score.scoreValue += 1;
-		
-			// Get the game object, as a whole, that's attached to the Collider2D component
+
+            // Get the game object, as a whole, that's attached to the Collider2D component
             Destroy(otherCollider.gameObject);
         }
     }
