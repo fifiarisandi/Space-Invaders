@@ -85,14 +85,18 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    //Sets reference to spawner for all enemies of the wave by giving spawner object. 
-    //Returns enemy number of wave. 
+    // Sets reference to spawner for all enemies of the wave by giving spawner object. 
+    // Returns enemy number of wave. 
     public int SetSpawnerReference(Spawner pSpawner)
     {
+        // Goes through the enemies array which contains all enemies of the wave. 
         for (int i = 0; i < enemies.Length; i++)
         {
+            // Sets spawner reference in the enemyBehaviour script to the spawner for every enemy. 
             enemies[i].GetComponent<EnemyBehaviour>().spawnerReference = pSpawner; 
         }
+        
+        // Return the number of enemies for the wave. 
         return enemies.Length;
     }
 }

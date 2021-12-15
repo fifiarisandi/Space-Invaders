@@ -30,7 +30,6 @@ public class ProjectileBehaviour : MonoBehaviour
     void DestroyProjectile()
     {
 		// Destroy the game object this script is on (the projectile game object)
-        Destroy(gameObject);
-        
+        Destroy(gameObject); 
     }
 }
