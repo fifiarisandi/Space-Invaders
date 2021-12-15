@@ -10,7 +10,6 @@ public class EnemyShooter : MonoBehaviour
     private bool isShooting; 
 
     public AudioSource audio;
-    public AudioClip collectSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -62,12 +61,12 @@ public class EnemyShooter : MonoBehaviour
         {
             Instantiate(projectilePrefab, leftProjectile, Quaternion.identity);
             Instantiate(projectilePrefab, rightProjectile, Quaternion.identity);
-            //audio.Play();
+            audio.Play();
         } 
         else
         {
             Instantiate(projectilePrefab, gameObject.transform.position, Quaternion.identity);
-            //audio.Play();
+            audio.Play();
         }
 
         isShooting = false;

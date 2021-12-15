@@ -9,10 +9,10 @@ public class EnemyBehaviour : MonoBehaviour
     public Spawner spawnerReference; 
     public int enemyHealth;
 
-    private bool isAlive = true; 
-    
+    private bool isAlive = true;
+
     public AudioSource audio;
-    public AudioClip destroySFX;
+    public AudioClip hitSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             //Enemy health is reduced after being hit
             enemyHealth -= 1;
+            audio.PlayOneShot(hitSFX);
 
             // Get the game object, as a whole, that's attached to the Collider2D component
             Destroy(otherCollider.gameObject);
@@ -53,10 +54,16 @@ public class EnemyBehaviour : MonoBehaviour
                 //Before the enemy is destroyed, the enemy Counter of the spawner is reduced. 
                 spawnerReference.ReduceEnemies();
 
-                //audio.PlayOneShot(destroySFX);
-                Destroy(gameObject);
+                StartCoroutine(TimerBeforeDestroy());
             }  
         }
+    }
+
+    private IEnumerator TimerBeforeDestroy()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false; 
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
 }

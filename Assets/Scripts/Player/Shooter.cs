@@ -39,7 +39,7 @@ public class Shooter : MonoBehaviour
         if (otherCollider.tag == "PowerUp")
         {
             powerUpCollected = true; 
-            //audio.PlayOneShot(collectSFX);
+            audio.PlayOneShot(collectSFX);
 
             //Expects an IEnumerator and starts a coroutine (timed process). 
             StartCoroutine(TimerForPowerUp());
@@ -65,12 +65,12 @@ public class Shooter : MonoBehaviour
             Instantiate(projectilePrefab, leftProjectile, Quaternion.identity);
             Instantiate(projectilePrefab, middleProjectile, Quaternion.identity);
             Instantiate(projectilePrefab, rightProjectile, Quaternion.identity);
-            //audio.Play();
+            audio.Play();
         } 
         else
         {
-            Instantiate(projectilePrefab, gameObject.transform.position, Quaternion.identity);
-            //audio.Play();
+            Instantiate(projectilePrefab, middleProjectile, Quaternion.identity);
+            audio.Play();
         }
         
     }

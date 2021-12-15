@@ -308,9 +308,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7fcc8717cb5efc448b3149010ca0c423, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fe08481a03b070a468eaeadf7411b53b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.245
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -406,7 +406,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416689616
 GameObject:
@@ -612,7 +612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &631201592
 GameObject:
@@ -643,7 +643,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &631201594
 MonoBehaviour:
@@ -1383,6 +1383,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709805797}
   m_CullTransparentMesh: 1
+--- !u!82 &1719794141 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 109446618, guid: 390ecafa345db6d4a90ed799ee01b656, type: 3}
+  m_PrefabInstance: {fileID: 8282605717086475198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1959331104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,6 +1686,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 109446617, guid: 390ecafa345db6d4a90ed799ee01b656, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1719794141}
+    - target: {fileID: 109446617, guid: 390ecafa345db6d4a90ed799ee01b656, type: 3}
+      propertyPath: collectSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 122fafa9692aada4894b1bff8509bb95, type: 3}
+    - target: {fileID: 109446618, guid: 390ecafa345db6d4a90ed799ee01b656, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e36e878044157e4b9a64c4cd3fc94f7, type: 3}
     - target: {fileID: 8113026014361150492, guid: 390ecafa345db6d4a90ed799ee01b656, type: 3}
       propertyPath: losingScreen
       value: 
