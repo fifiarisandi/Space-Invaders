@@ -47,6 +47,7 @@ public class EnemyBehaviour : MonoBehaviour
             if (numberOfHits == 0)
             {
                 //Play the destruction SFX
+                Score.scoreValue++;
                 audio.PlayOneShot(destroySFX);
                 Destroy(gameObject);
                
