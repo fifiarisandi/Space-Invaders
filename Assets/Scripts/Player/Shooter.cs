@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,19 @@ using UnityEngine;
 // This script allows the player to shoot projectiles by instantiating them during run-time/gameplay
 public class Shooter : MonoBehaviour
 {
+    RocketLuncher[] lunchers;
+    
     public GameObject projectilePrefab;
+
     public AudioSource bulletAudio;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Get all children function with (s) !!!!
+        lunchers = transform.GetComponentsInChildren<RocketLuncher>();
         bulletAudio = GetComponent<AudioSource>();
+    
     }
 
     // Update is called once per frame
@@ -22,7 +29,18 @@ public class Shooter : MonoBehaviour
         {
             Shoot();
         }
+
+        // Check if the player pressed the 'Left Ctrl' key, mapped to the Jump input in project settings, to make them shoot
+        if (Input.GetButtonDown("Fire1"))
+        {
+            foreach (var luncher in lunchers)
+            {
+                luncher.ShootRocket();
+            }
+        }
     }
+
+   
 
     void Shoot()
     {
