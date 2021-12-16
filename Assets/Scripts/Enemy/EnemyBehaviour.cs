@@ -52,7 +52,18 @@ public class EnemyBehaviour : MonoBehaviour
                 Destroy(gameObject);
                
             }
-            
+
+            // Get the game object, as a whole, that's attached to the Collider2D component
+            Destroy(otherCollider.gameObject);
+        }
+        else if (otherCollider.tag == "Rocket")
+        {
+            numberOfHits = 0;
+            //Play the destruction SFX
+            Score.scoreValue++;
+            audio.PlayOneShot(destroySFX);
+            Destroy(gameObject);
+
             // Get the game object, as a whole, that's attached to the Collider2D component
             Destroy(otherCollider.gameObject);
         }

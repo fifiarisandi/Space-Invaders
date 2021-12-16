@@ -10,15 +10,18 @@ public class Shooter : MonoBehaviour
     
     public GameObject projectilePrefab;
 
-    public AudioSource bulletAudio;
+    public AudioSource audio;
+    public AudioClip bulletSFX;
+    public AudioClip rocketSFX;
 
     // Start is called before the first frame update
     void Start()
     {
         //Get all children function with (s) !!!!
         lunchers = transform.GetComponentsInChildren<RocketLuncher>();
-        bulletAudio = GetComponent<AudioSource>();
-    
+        //bulletAudio = GetComponent<AudioSource>();
+        //roketAudio = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class Shooter : MonoBehaviour
             {
                 luncher.ShootRocket();
             }
+            audio.PlayOneShot(rocketSFX);
         }
     }
 
@@ -48,6 +52,7 @@ public class Shooter : MonoBehaviour
 		// When the instance is created, position at the same location where the player currently is (by copying their transform.position),
 		// and don't rotate the instance at all - let it keep its "identity" rotation
         Instantiate(projectilePrefab, gameObject.transform.position, Quaternion.identity);
-        bulletAudio.Play();  
+        audio.PlayOneShot(bulletSFX);
+        //bulletAudio.Play();  
     }
 }
