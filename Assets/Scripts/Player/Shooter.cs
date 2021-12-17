@@ -45,25 +45,32 @@ public class Shooter : MonoBehaviour
         // Check if the player pressed the 'Left Ctrl' key, mapped to the Jump input in project settings, to make them shoot
         if (Input.GetButtonDown("Fire1") && !rocketFired)
         {
+            //Indicate the rockets have been fired
             rocketFired = true;
             launchTime = Time.time;
             roketWaitTimeSlider.value = 0;
+            //for each rocket luncher shoot one missle
             foreach (var luncher in lunchers)
             {
                 luncher.ShootRocket();
             }
+            //Plays the rocket lunching Sound Effect
             audio.PlayOneShot(rocketSFX);
         }
 
+        //If rockets fired start counting timer until next relanch
         if (rocketFired)
         {
-            if(roketWaitTimeSlider.value < rocketRelaunchTimer)
+            if (roketWaitTimeSlider.value < rocketRelaunchTimer)
             {
+                //Connecting the timer count with the rocket slider UI
                 roketWaitTimeSlider.value = Time.time - launchTime;
 
             }
             else
+            {   //To reactivate the firing mechanisim
                 rocketFired = false;
+            }
         }
     }
 

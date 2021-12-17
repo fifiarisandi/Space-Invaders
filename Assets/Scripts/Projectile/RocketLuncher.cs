@@ -12,6 +12,7 @@ public class RocketLuncher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //initiliaze the direction to be the same as the launcher direction
         direction = (transform.localRotation * Vector2.up).normalized;
     }
 
@@ -24,11 +25,12 @@ public class RocketLuncher : MonoBehaviour
     public void ShootRocket()
     {
 
-        //GameObject leftRoket = Instantiate(roketForwardPrefab, gameObject.transform.position + Vector3.left * 0.5f, Quaternion.Euler(0, 0, 45f));
-       // GameObject righttRoket = Instantiate(roketForwardPrefab, gameObject.transform.position + Vector3.right * 0.5f, Quaternion.Euler(0, 0, -45f));
+       //Initiate the rocket using the position of the rocket launcher and the orientation as well
         GameObject roketInitiated = Instantiate(rocket.gameObject, gameObject.transform.position,gameObject.transform.rotation);
         Rocket goRoket = roketInitiated.GetComponent<Rocket>();
+        
+        //To ensure the rocket will move in the upward direction with the rotation
         goRoket.direction = this.direction;
-        // leftRoket.transform.rotation = Quaternion.identity;
+ 
     }
 }

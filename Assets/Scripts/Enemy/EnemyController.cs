@@ -81,6 +81,9 @@ public class EnemyController : MonoBehaviour
             if (gameObject.transform.position.x <= minPosX)
             {
                 isMovingRight = true;
+                //Pushing the position of the vertical axis by half the moving distance downwards
+                newPosition = new Vector2(newPositionX, currentPositionY - moveDistance * 0.5f);
+                gameObject.transform.position = newPosition;
             }
         }
     }
