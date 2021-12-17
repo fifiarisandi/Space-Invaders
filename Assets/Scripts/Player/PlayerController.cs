@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     // A reference to the Sprite Renderer componenet, holding the player image
     public SpriteRenderer playerImage;
 
+    //General player parameters
     public float moveSpeed = 5f;
 
     // Reference to the main camera that we see the game world through

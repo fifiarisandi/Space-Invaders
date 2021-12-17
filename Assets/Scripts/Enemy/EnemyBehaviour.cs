@@ -8,15 +8,20 @@ public class EnemyBehaviour : MonoBehaviour
 {
     //Enemy number of hits needed to be destroyed
     public int numberOfHits = 2;
+    public int totalHits = 0;
+
+    //Audio Variables
     public AudioSource audio;
     public AudioClip damageSFX;
     public AudioClip destroySFX;
+
+    //Graphics
     public Sprite damageSprite;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     // Update is called once per frame
@@ -74,4 +79,5 @@ public class EnemyBehaviour : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = imageSprite;
     }
+
 }
