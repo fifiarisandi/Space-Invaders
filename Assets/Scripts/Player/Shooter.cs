@@ -20,6 +20,8 @@ public class Shooter : MonoBehaviour
     public float rocketRelaunchTimer;
     float launchTime;
 
+    public int numberOfBullets;
+
     // Start is called before the first frame update
     void Start()
     {

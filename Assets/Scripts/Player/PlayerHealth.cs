@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthBarSlider;
     public Gradient gradient;
     public Image fill;
-    public int playerHealth;
 
     //Audio Variables
     public AudioSource audio;
@@ -18,9 +17,9 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = 5;
-        healthBarSlider.maxValue = playerHealth;
-        healthBarSlider.value = playerHealth;
+        GameController.playerHealth = 5;
+        healthBarSlider.maxValue = GameController.playerHealth;
+        healthBarSlider.value = GameController.playerHealth;
         fill.color = gradient.Evaluate(1f);
     }
 
@@ -35,20 +34,20 @@ public class PlayerHealth : MonoBehaviour
         if (otherCollider.tag == "Missle")
         {
             //Decrease the health of the player by 1
-            playerHealth--;
+            GameController.playerHealth--;
 
             //Adjust the health bar
-            healthBarSlider.value = playerHealth;
+            healthBarSlider.value = GameController.playerHealth;
             fill.color = gradient.Evaluate(healthBarSlider.normalizedValue);
 
             //If player is not destoryed
-            if (playerHealth >= 1)
+            if (GameController.playerHealth >= 1)
             {
                 //Play the take damage SFX
                 audio.PlayOneShot(damageSFX);
             }
             //If the enemy doesn't have any health left 
-            if (playerHealth == 0)
+            if (GameController.playerHealth == 0)
             {
                 //Play the destruction SFX
                 audio.PlayOneShot(destroySFX);
