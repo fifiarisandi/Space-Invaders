@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioClip shoot;
+    public AudioClip explosion;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public void PlaySFX(string clipToPlay) {
+        if (clipToPlay == "Shoot") {
+            audioSource.clip = shoot;
+            audioSource.Play();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (clipToPlay == "Explosion")
+        {
+            audioSource.clip = explosion;
+            audioSource.Play();
+        }
     }
 }

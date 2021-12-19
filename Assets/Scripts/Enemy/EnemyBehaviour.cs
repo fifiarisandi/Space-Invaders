@@ -5,6 +5,8 @@ using UnityEngine;
 // This script controls the behaviour of each single Alien enemy
 public class EnemyBehaviour : MonoBehaviour
 {
+    public SFXManager sfxManager;
+    public int killCount;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +28,15 @@ public class EnemyBehaviour : MonoBehaviour
 		//  destroy both this game object and the projectile
         if (otherCollider.tag == "Projectile")
         {
+            //Added explosion SFX
+            sfxManager.PlaySFX("Explosion");
+
             Destroy(gameObject);
 			
 			// Get the game object, as a whole, that's attached to the Collider2D component
             Destroy(otherCollider.gameObject);
+
+            killCount++;
         }
     }
 }
