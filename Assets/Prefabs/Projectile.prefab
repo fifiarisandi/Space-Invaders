@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 203365707565781201}
   - component: {fileID: 4182557167931646945}
-  - component: {fileID: -9146165255665320511}
   - component: {fileID: 5384586778209841994}
+  - component: {fileID: 3298665090188734798}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3076183288201087822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.009, y: 0.005, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 31a791d6153225e408bed04eeb6691ae, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.7913804, a: 1}
+  m_Sprite: {fileID: -4223754384032259362, guid: e02347dc651b7184eb491f7a0123fb44, type: 3}
+  m_Color: {r: 0.7490566, g: 1, b: 0.8797265, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &-9146165255665320511
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3076183288201087822}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.0731349
 --- !u!114 &5384586778209841994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +98,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   destroyAfter: 4
+--- !u!58 &3298665090188734798
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3076183288201087822}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.04491802
