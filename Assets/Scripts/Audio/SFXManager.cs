@@ -8,8 +8,10 @@ public class SFXManager : MonoBehaviour
     public AudioClip shoot;
     public AudioClip explosion;
 
-    public void PlaySFX(string clipToPlay) {
-        if (clipToPlay == "Shoot") {
+    public void PlaySFX(string clipToPlay)
+    {
+        if (clipToPlay == "Shoot") 
+        {
             audioSource.clip = shoot;
             audioSource.Play();
         }

@@ -6,18 +6,18 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public SFXManager sfxManager;
-    public int killCount;
+    public GameObject uiController;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        uiController = GameObject.Find("UIController");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        uiController.GetComponent<UIController>().ClearTime();
     }
 
 	// A function automatically triggerred when another game object with Collider2D component
@@ -28,15 +28,24 @@ public class EnemyBehaviour : MonoBehaviour
 		//  destroy both this game object and the projectile
         if (otherCollider.tag == "Projectile")
         {
-            //Added explosion SFX
-            sfxManager.PlaySFX("Explosion");
 
             Destroy(gameObject);
 			
 			// Get the game object, as a whole, that's attached to the Collider2D component
             Destroy(otherCollider.gameObject);
 
-            killCount++;
+            //Added explosion SFX
+            sfxManager.PlaySFX("Explosion");
+
+            //Counting number of defeated enemies
+            uiController.GetComponent<UIController>().KillCount();
+
+            // In case of moving to the next level
+            uiController.GetComponent<UIController>().SetForNextLevel();
+
+
+
         }
     }
+
 }

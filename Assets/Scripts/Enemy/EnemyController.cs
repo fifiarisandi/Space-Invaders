@@ -20,7 +20,6 @@ public class EnemyController : MonoBehaviour
     // A boolean to check which direction the game object is currently moving
     private bool isMovingRight = true;
 
-
     // Use this for initialization
     void Start()
     {
@@ -29,6 +28,11 @@ public class EnemyController : MonoBehaviour
          * Third argument is how the interval between every time it's called
          */ 
         InvokeRepeating("MoveEnemies", timeStep, timeStep);
+    }
+
+    void Update()
+    {
+
     }
 
     // Moves the game object this script is on. And since this game object has the enemies as children,

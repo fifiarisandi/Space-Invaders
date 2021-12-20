@@ -123,6 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a08ceecdfb38ea469495665b36fe552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxManager: {fileID: 0}
+  enemyController: {fileID: 0}
+  uiController: {fileID: 0}
+  UIController: {fileID: 0}
 --- !u!50 &-6034247565746261748
 Rigidbody2D:
   serializedVersion: 4

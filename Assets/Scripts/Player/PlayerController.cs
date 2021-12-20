@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position = Vector2.MoveTowards(currentPos, newPos, moveSpeed * Time.deltaTime);       
         }
 		// Do the same as above, but mirrored for the left direction (note the opposite less than/greater than checks)
-        else if (inputHl < 0 && (currentPos.x >= minPosX))
+        else if ((inputHl < 0) && (currentPos.x >= minPosX))
         {
             Vector2 newPos = currentPos + Vector2.left;
 
