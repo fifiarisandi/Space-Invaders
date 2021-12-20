@@ -7,6 +7,7 @@ public class SFXManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip shoot;
     public AudioClip explosion;
+    public AudioClip mouseClick;
 
     public void PlaySFX(string clipToPlay)
     {
@@ -19,6 +20,12 @@ public class SFXManager : MonoBehaviour
         if (clipToPlay == "Explosion")
         {
             audioSource.clip = explosion;
+            audioSource.Play();
+        }
+
+        if (clipToPlay == "MouseClick")
+        {
+            audioSource.clip = mouseClick;
             audioSource.Play();
         }
     }

@@ -29,7 +29,8 @@ public class EnemyBehaviour : MonoBehaviour
         if (otherCollider.tag == "Projectile")
         {
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
 			
 			// Get the game object, as a whole, that's attached to the Collider2D component
             Destroy(otherCollider.gameObject);
@@ -41,7 +42,7 @@ public class EnemyBehaviour : MonoBehaviour
             uiController.GetComponent<UIController>().KillCount();
 
             // In case of moving to the next level
-            uiController.GetComponent<UIController>().SetForNextLevel();
+            //uiController.GetComponent<UIController>().SetForNextLevel();//
 
 
 
