@@ -55,7 +55,8 @@ public class EnemyController : MonoBehaviour
              *  The "position" property in transform is either a Vector2 (2d) or Vector3 (3d) data type, so we need to assign the values
              *  as one of those data types. Hence why newPosition is Vector2 data type
              */
-            gameObject.transform.position = newPosition;
+           
+                gameObject.transform.position = newPosition;
             
             // if the new position of the game object after moving is greater than or equals the max X limit, then reverse direction
             if (gameObject.transform.position.x >= maxPosX)

@@ -11,7 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
@@ -29,7 +29,13 @@ public class EnemyBehaviour : MonoBehaviour
         if (otherCollider.tag == "Projectile")
         {
             audio.PlayOneShot(destroySFX);
-            Destroy(gameObject);
+            if (gameObject.tag == "Gift")
+            {
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                //GetComponent<Rigidbody2D>().velocity = Rigidbody2D.velocity;
+            } else {
+                Destroy(gameObject);
+            }
 			
 			// Get the game object, as a whole, that's attached to the Collider2D component
             Destroy(otherCollider.gameObject);

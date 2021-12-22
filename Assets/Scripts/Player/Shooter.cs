@@ -33,4 +33,9 @@ public class Shooter : MonoBehaviour
         Instantiate(projectilePrefab, gameObject.transform.position, Quaternion.identity);
         audio.Play();
     }
+
+    void Changed()
+    {
+        
+    }
 }
